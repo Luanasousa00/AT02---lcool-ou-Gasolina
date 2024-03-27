@@ -8,12 +8,22 @@
         <item name="colorPrimaryDark">#1F1F1F</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#B85045</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorSecondaryVariant">#ffffff</item>
         <item name="colorOnSecondary">@color/black</item>
 
         <!-- Customize your theme here. -->
         <item name="android:textColorPrimary">@color/black</item>
         <item name="android:textColorHint">@color/black</item>
         <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="FUNDO">
+        <item name="android:backgroundTint">#016FF5</item>
+        <item name="android:background">#016FF5</item>
+    </style>
+
+    <style name="BOTAO">
+        <item name="android:backgroundTint">#fb5d06</item>
+        <item name="android:background">#fb5d06</item>
     </style>
 </resources>
