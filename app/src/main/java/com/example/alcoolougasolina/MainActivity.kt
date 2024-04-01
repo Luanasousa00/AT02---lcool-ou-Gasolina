@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         btCalc = findViewById(R.id.btCalcular)
         textMsg = findViewById(R.id.textMsg)
 
+        // COMENTARIO
+
         val switch = findViewById<Switch>(R.id.swPercentual)
 
         switch.setOnCheckedChangeListener { buttonView, isChecked ->
