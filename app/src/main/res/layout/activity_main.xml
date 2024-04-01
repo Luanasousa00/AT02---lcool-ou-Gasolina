@@ -44,8 +44,8 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edAlcool"
-            android:layout_width="match_parent"
+            android:id="@+id/edGasolina"
+            android:layout_width="186dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:ems="10"
@@ -53,11 +53,12 @@
             android:inputType="numberDecimal" />
 
         <EditText
-            android:id="@+id/edGasolina"
+            android:id="@+id/edAlcool"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
             android:ems="10"
-            android:hint="alcool"
+            android:hint="Preço do Alcool"
             android:inputType="numberDecimal" />
 
         <Switch
@@ -88,4 +89,5 @@
             android:textSize="16sp" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

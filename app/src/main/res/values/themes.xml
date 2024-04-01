@@ -18,8 +18,8 @@
     </style>
 
     <style name="FUNDO">
-        <item name="android:backgroundTint">#016FF5</item>
-        <item name="android:background">#016FF5</item>
+        <item name="android:backgroundTint">@color/purple_700</item>
+        <item name="android:background">@color/purple_700</item>
     </style>
 
     <style name="BOTAO">
