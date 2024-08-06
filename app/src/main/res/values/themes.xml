@@ -23,7 +23,7 @@
     </style>
 
     <style name="BOTAO">
-        <item name="android:backgroundTint">#fb5d06</item>
-        <item name="android:background">#fb5d06</item>
+        <item name="android:backgroundTint">#FFF</item>
+        <item name="android:background">#FFF</item>
     </style>
 </resources>
