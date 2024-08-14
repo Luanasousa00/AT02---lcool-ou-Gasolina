@@ -8,91 +8,86 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="139dp"
+        android:layout_height="142dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="uma bomba de gasolina ilustrando o app"
+        android:paddingVertical="10dp"
+        android:textAlignment="center"
+        app:srcCompat="@drawable/_9_85223"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="91dp" />
+
+    <TextView
+        android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minHeight="550dp"
-        android:minWidth="300dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="3dp"
-        android:background="@drawable/rounded_layout"
-        android:backgroundTint="?android:backgroundTint"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_gravity="center_horizontal"
+        android:text="@string/gasolina_ou_lcool"
+        android:textAlignment="center"
+        android:textColor="#5C00FF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="233dp" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="139dp"
-            android:layout_height="142dp"
-            android:layout_gravity="center_horizontal"
-            android:contentDescription="uma bomba de gasolina ilustrando o app"
-            android:paddingVertical="10dp"
-            android:textAlignment="center"
-            app:srcCompat="@drawable/_9_85223" />
+    <EditText
+        android:id="@+id/edGasolina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:ems="10"
+        android:hint="@string/PrecoG"
+        android:inputType="numberDecimal"
+        android:minHeight="52dp"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="276dp" />
 
-        <TextView
-            android:id="@+id/titulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
-            android:text="Gasolina ou Álcool?"
-            android:textAlignment="center"
-            android:textColor="#5C00FF"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+    <EditText
+        android:id="@+id/edAlcool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:ems="10"
+        android:hint="@string/PrecoA"
+        android:inputType="numberDecimal"
+        android:minHeight="52dp"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="328dp" />
 
-        <EditText
-            android:id="@+id/edGasolina"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:minHeight="52dp"
-            android:ems="10"
-            android:hint="Preço da gasolina"
-            android:inputType="numberDecimal" />
+    <Switch
+        android:id="@+id/swPercentual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginHorizontal="40dp"
+        android:minHeight="52dp"
+        android:text="@string/_75"
+        tools:layout_editor_absoluteX="243dp"
+        tools:layout_editor_absoluteY="381dp" />
 
-        <EditText
-            android:id="@+id/edAlcool"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:minHeight="52dp"
-            android:ems="10"
-            android:hint="Preço do Alcool"
-            android:inputType="numberDecimal" />
+    <Button
+        android:id="@+id/btCalcular"
+        style="@style/BOTAO"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="20dp"
+        android:text="@string/Calcular"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="453dp" />
 
-        <Switch
-            android:id="@+id/swPercentual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginHorizontal="40dp"
-            android:minHeight="52dp"
-            android:text="@string/_75" />
-
-        <Button
-            android:id="@+id/btCalcular"
-            style="@style/BOTAO"
-            android:layout_width="141dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="20dp"
-            android:text="Calcular"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:id="@+id/textMsg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Ainda não sei qual é a melhor."
-            android:textSize="16sp" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/AindaNaoSei"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="521dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

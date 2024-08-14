@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gasolina_ou_lcool">Gasoline or Alcohol?</string>
+    <string name="app_name">With what fuel?</string>
+    <string name="GasolinaOuAlcool">Gasoline or Alcohol?</string>
+    <string name="PrecoG">Gasoline price</string>
+    <string name="PrecoA">Price of Alcohol</string>
+    <string name="Calcular">Calculate</string>
+    <string name="AindaNaoSei">I still dont know which is best</string>
+    <string name="_75">75%</string>
+</resources>

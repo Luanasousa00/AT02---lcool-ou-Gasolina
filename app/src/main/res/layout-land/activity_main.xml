@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FUNDO"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontalStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontalMidStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontalMidEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontalEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="139dp"
+        android:layout_height="142dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="220dp"
+        android:contentDescription="uma bomba de gasolina ilustrando o app"
+        android:paddingVertical="10dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalMidEnd"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalEnd"
+        app:layout_constraintHorizontal_bias="0.986"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalStart"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalStart"
+        app:layout_constraintVertical_bias="0.152"
+        app:srcCompat="@drawable/_9_85223" />
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/gasolina_ou_lcool"
+        android:textAlignment="center"
+        android:textColor="#5C00FF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalStart"
+        tools:layout_editor_absoluteY="158dp" />
+
+    <EditText
+        android:id="@+id/edGasolina"
+        android:layout_width="569dp"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10"
+        android:hint="@string/PrecoG"
+        android:inputType="numberDecimal"
+        android:minHeight="52dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalEnd"
+        tools:layout_editor_absoluteY="210dp" />
+
+    <EditText
+        android:id="@+id/edAlcool"
+        android:layout_width="569dp"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginStart="4dp"
+        android:ems="12"
+        android:hint="@string/PrecoA"
+        android:inputType="numberDecimal"
+        android:minHeight="52dp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalStart"
+        tools:layout_editor_absoluteY="270dp" />
+
+    <Switch
+        android:id="@+id/swPercentual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginHorizontal="40dp"
+        android:minHeight="52dp"
+        android:text="@string/_75"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalEnd"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalMidEnd"
+        tools:layout_editor_absoluteX="223dp" />
+
+    <Button
+        android:id="@+id/btCalcular"
+        style="@style/BOTAO"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="20dp"
+        android:text="@string/Calcular"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="369dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <TextView
+        android:id="@+id/textMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/AindaNaoSei"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="258dp"
+        tools:layout_editor_absoluteY="370dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
