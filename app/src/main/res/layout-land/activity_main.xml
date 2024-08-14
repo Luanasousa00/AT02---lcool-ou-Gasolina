@@ -81,6 +81,8 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalStart"
         tools:layout_editor_absoluteY="158dp" />
 
+
+
     <EditText
         android:id="@+id/edGasolina"
         android:layout_width="569dp"
