@@ -13,37 +13,48 @@
         android:layout_width="139dp"
         android:layout_height="142dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
         android:contentDescription="uma bomba de gasolina ilustrando o app"
         android:paddingVertical="10dp"
         android:textAlignment="center"
-        app:srcCompat="@drawable/_9_85223"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="91dp" />
+        app:layout_constraintBottom_toTopOf="@+id/titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48000002"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/_9_85223" />
 
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
         android:text="@string/gasolina_ou_lcool"
         android:textAlignment="center"
         android:textColor="#5C00FF"
         android:textSize="25sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="233dp" />
+        app:layout_constraintBottom_toTopOf="@+id/edGasolina"
+        app:layout_constraintEnd_toEndOf="@+id/edGasolina"
+        app:layout_constraintStart_toStartOf="@+id/edGasolina"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/edGasolina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="@string/PrecoG"
         android:inputType="numberDecimal"
         android:minHeight="52dp"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="276dp" />
+        app:layout_constraintBottom_toTopOf="@+id/edAlcool"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
     <EditText
         android:id="@+id/edAlcool"
@@ -54,19 +65,22 @@
         android:hint="@string/PrecoA"
         android:inputType="numberDecimal"
         android:minHeight="52dp"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="328dp" />
+        app:layout_constraintBottom_toTopOf="@+id/swPercentual"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edGasolina" />
 
-    <Switch
-        android:id="@+id/swPercentual"
+    <TextView
+        android:id="@+id/textMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginHorizontal="40dp"
-        android:minHeight="52dp"
-        android:text="@string/_75"
-        tools:layout_editor_absoluteX="243dp"
-        tools:layout_editor_absoluteY="381dp" />
+        android:layout_gravity="center_horizontal"
+        android:text="@string/AindaNaoSei"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btCalcular"
+        app:layout_constraintStart_toStartOf="@+id/btCalcular"
+        app:layout_constraintTop_toBottomOf="@+id/btCalcular" />
 
     <Button
         android:id="@+id/btCalcular"
@@ -77,17 +91,23 @@
         android:layout_marginVertical="20dp"
         android:text="@string/Calcular"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="453dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textMsg"
+        app:layout_constraintEnd_toEndOf="@+id/edAlcool"
+        app:layout_constraintStart_toStartOf="@+id/edAlcool"
+        app:layout_constraintTop_toBottomOf="@+id/swPercentual" />
 
-    <TextView
-        android:id="@+id/textMsg"
+    <Switch
+        android:id="@+id/swPercentual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/AindaNaoSei"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="521dp" />
+        android:layout_gravity="right"
+        android:layout_marginHorizontal="40dp"
+        android:minHeight="52dp"
+        android:text="@string/_75"
+        app:layout_constraintBottom_toTopOf="@+id/btCalcular"
+        app:layout_constraintEnd_toEndOf="@+id/edAlcool"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="@+id/edAlcool"
+        app:layout_constraintTop_toBottomOf="@+id/edAlcool" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
