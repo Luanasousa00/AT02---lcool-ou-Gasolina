@@ -94,6 +94,7 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Preços salvos no histórico", Toast.LENGTH_SHORT).show()
     }
 
+
     @SuppressLint("Range")
     private fun carregarHistorico() {
         val cursor: Cursor = db.rawQuery("SELECT * FROM historico_precos ORDER BY data_hora DESC", null)
