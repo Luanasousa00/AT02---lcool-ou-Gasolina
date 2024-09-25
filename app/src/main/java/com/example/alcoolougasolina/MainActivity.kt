@@ -1,8 +1,7 @@
 package com.example.alcoolougasolina
 
 import android.annotation.SuppressLint
-import android.content.ContentValues
-import android.database.Cursor
+import android.content.Intent // Import necessário para criar a Intent
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +9,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Switch
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -18,11 +16,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var etPrecoGasolina: EditText
     lateinit var btCalc: Button
     lateinit var textMsg: TextView
-    lateinit var btHistorico: Button
-    lateinit var textHistorico: TextView
-
     var swPercentual: Int = 70
     lateinit var db: SQLiteDatabase
+    lateinit var btHistorico: Button
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         btCalc = findViewById(R.id.btCalcular)
         textMsg = findViewById(R.id.textMsg)
         btHistorico = findViewById(R.id.btHistorico)
-        textHistorico = findViewById(R.id.textHistorico)
 
         db = SQLiteDatabase.openOrCreateDatabase(this.getDatabasePath("combustivel.db"), null)
 
@@ -47,7 +42,8 @@ class MainActivity : AppCompatActivity() {
         )
 
         val switch = findViewById<Switch>(R.id.swPercentual)
-        switch.setOnCheckedChangeListener { _, isChecked ->
+
+        switch.setOnCheckedChangeListener { buttonView, isChecked ->
             swPercentual = if (isChecked) {
                 75
             } else {
@@ -63,15 +59,12 @@ class MainActivity : AppCompatActivity() {
                 val precoAlcool = precoAlcoolText.toDouble()
                 val precoGasolina = precoGasolinaText.toDouble()
 
-                // Salva os preços no histórico
-                salvarPrecos(precoAlcool, precoGasolina)
-
                 val percentual = precoAlcool / precoGasolina * 100
 
-                textMsg.text = if (percentual <= swPercentual) {
-                    "Álcool é mais vantajoso"
+                if (percentual <= swPercentual) {
+                    textMsg.text = "Álcool é mais vantajoso"
                 } else {
-                    "Gasolina é mais vantajoso"
+                    textMsg.text = "Gasolina é mais vantajosa"
                 }
 
                 Log.d("PDM24", "No btCalcular, $percentual")
@@ -80,40 +73,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Adiciona o listener para o botão de histórico
         btHistorico.setOnClickListener {
-            carregarHistorico()
+            // Cria a Intent para iniciar a tela de Histórico
+            val intent = Intent(this, HistoricoActivity::class.java)
+            startActivity(intent)
         }
-    }
-
-    private fun salvarPrecos(precoAlcool: Double, precoGasolina: Double) {
-        val values = ContentValues()
-        values.put("preco_alcool", precoAlcool)
-        values.put("preco_gasolina", precoGasolina)
-        db.insert("historico_precos", null, values)
-
-        Toast.makeText(this, "Preços salvos no histórico", Toast.LENGTH_SHORT).show()
-    }
-
-
-    @SuppressLint("Range")
-    private fun carregarHistorico() {
-        val cursor: Cursor = db.rawQuery("SELECT * FROM historico_precos ORDER BY data_hora DESC", null)
-        val historico = StringBuilder()
-
-        if (cursor.moveToFirst()) {
-            do {
-                val precoAlcool = cursor.getDouble(cursor.getColumnIndex("preco_alcool"))
-                val precoGasolina = cursor.getDouble(cursor.getColumnIndex("preco_gasolina"))
-                val dataHora = cursor.getString(cursor.getColumnIndex("data_hora"))
-
-                historico.append("Data/Hora: $dataHora\n")
-                historico.append("Álcool: $precoAlcool, Gasolina: $precoGasolina\n\n")
-            } while (cursor.moveToNext())
-        }
-        cursor.close()
-
-        // Exibe o histórico no TextView
-        textHistorico.text = historico.toString()
     }
 
     override fun onResume() {

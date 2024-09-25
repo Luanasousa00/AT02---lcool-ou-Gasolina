@@ -124,19 +124,7 @@
         app:layout_constraintWidth_percent="0.8" />
 
     <!-- TextView para mostrar o histórico dos preços -->
-    <TextView
-        android:id="@+id/textHistorico"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:text="Histórico de Preços:"
-        android:textSize="16sp"
-        android:gravity="start"
-        app:layout_constraintTop_toBottomOf="@+id/btHistorico"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintWidth_percent="0.8" />
+
 
 
 
